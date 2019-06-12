@@ -1,0 +1,45 @@
+{
+  "name": "intercom_test",
+  "version": "0.0.1",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "clear && node -r esm index.js",
+    "lint": "eslint 'src/**/*.js' --fix",
+    "format": "prettier-eslint 'server/**/*.{js,json}' --write"
+  },
+  "author": "Linh Ha Cong",
+  "license": "ISC",
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.8.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-promise": "^4.1.1",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+    "lint-staged": "^8.2.0",
+    "prettier-eslint-cli": "^4.7.1"
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
